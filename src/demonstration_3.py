@@ -17,13 +17,27 @@ Given `[[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]`, your function should
 return `[[1, 5, 4], ['b']]`.
 """
 ####################################   My Attempt, FIX   #####################################################
+def filter_homogen(arrays):
+    """List should be multi-dimensional"""
+    to_return = []
+    for list_ in arrays:
+        item = None
+        same_type = True
+        for i in list_:
+            if item is None:
+                item = i
+            if i is not item and type(i) is not type(item):
+                same_type = False
+        if same_type and len(list_) != 0:
+            to_return.append(list_)
+    return to_return
+
 def filter_homogenous(arrays):
-    # Your code here
-
-
-
+    return [i for i in arrays if i != [] and all(type(j) == type(i[0]) for j in i)]
 ###########################################################################################################
-# Another way
-def filter_homogenous(arrays):
-    # Your code here
+if __name__ == '__main__':
+    arrays = [[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3],
+              ['e', 'u'], [1, 856,'e'], [8], [], [21, 52, 'p']]
+    print("Function One: ", filter_homogenous(arrays))
+    print("Function Two: ", filter_homogen(arrays))
 

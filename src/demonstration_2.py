@@ -50,4 +50,7 @@ def numbers(lines):
     for index, line in enumerate(lines):
         output.append(f"{index + 1}: {line}")
     return output
-print("Second Function", numbers(string_value))
+
+
+if __name__ == '__main__':
+    print("Second Function", numbers(string_value))

@@ -62,5 +62,7 @@ print()
 def split_by_parts(string, part_length):
     return [string[i:i + part_length] for i in range(0, len(string), part_length)]
 
-# Call function
-print(split_by_parts(string, part_length))
+
+if __name__ == '__main__':
+    # Call function
+    print(split_by_parts(string, part_length))
